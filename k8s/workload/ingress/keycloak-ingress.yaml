@@ -8,19 +8,10 @@ metadata:
     nginx.ingress.kubernetes.io/app-root: "/auth"
 spec:
   ingressClassName: nginx
-  # This is the default backend for the Ingress resource. It will be used if no other rules match.
-  defaultBackend:
-    service:
-      name: fsa-keycloak-http
-      port:
-        number: 80
-  # This is the rules section for the Ingress resource. It defines how to route traffic based on the request path.
-  # The rules are defined in a list, and each rule consists of a host and a set of paths.
-  # The host is optional, and if not specified, the rule applies to all hosts.
   rules:
     - http:
         paths:
-          - path: /
+          - path: /auth
             pathType: Prefix
             backend:
               service:

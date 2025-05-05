@@ -7,6 +7,12 @@ nameOverride: ""
 # The number of replicas to create (has no effect if autoscaling enabled)
 replicas: 1
 
+
+
+
+
+
+#CHANGING THIS AS A TEST
 image:
   # The Keycloak image repository
   repository: fsareznyregistry.azurecr.io/fsa-keycloak
@@ -15,8 +21,14 @@ image:
   # Overrides the Keycloak image tag with a specific digest
   digest: ""
   # The Keycloak image pull policy
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
+# overrides go here
+keycloak:
+  args:
+    - start-dev
+    - --import-realm
+    
 # Image pull secrets for the Pod
 imagePullSecrets: []
 # - name: myRegistrKeySecretName
@@ -116,12 +128,19 @@ command:
 
 
 ## Overrides the default args for the Keycloak container
-args: []
+args: [
+]
 
 # Additional environment variables for Keycloak
 extraEnv: |
   # - name: KC_LOG_LEVEL
   #   value: DEBUG
+  - name: KC_HTTP_ENABLED
+    value: "true"
+  - name: KC_HTTPS_REQUIRED
+    value: "none"
+  - name: KC_HOSTNAME_STRICT
+    value: "false"
   - name: JAVA_OPTS
     value: >-
       -Xms256m
