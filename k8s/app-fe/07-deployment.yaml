@@ -28,13 +28,13 @@ spec:
           ports:
             - name: http
               containerPort: 80
-          # livenessProbe:
-          #   httpGet:
-          #     # TODO: zmenit na nejaky validny endpoint
-          #     path: /
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     # TODO: zmenit na nejaky validny endpoint
-          #     path: /
-          #     port: http
+          livenessProbe:
+             httpGet:
+               # TODO: zmenit na nejaky validny endpoint
+               path: /
+               port: http
+          readinessProbe:
+             httpGet:
+               # TODO: zmenit na nejaky validny endpoint
+               path: /
+               port: http
