@@ -13,7 +13,6 @@ spec:
   rules:
   - http:
       paths:
-      # FSA toto si vo finale budete musiet pomenit na zaklade Vasej aplikacie
       - path: /
         pathType: Prefix
         backend:

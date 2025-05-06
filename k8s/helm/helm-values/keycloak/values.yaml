@@ -135,6 +135,8 @@ args: [
 extraEnv: |
   # - name: KC_LOG_LEVEL
   #   value: DEBUG
+  # - name: QUARKUS_HTTP_ROOT_PATH
+  #    value: /auth
   - name: KC_HTTP_ENABLED
     value: "true"
   - name: KC_HTTPS_REQUIRED
