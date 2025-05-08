@@ -65,7 +65,7 @@ spec:
              successThreshold: 1
              failureThreshold: 5
              httpGet:
-               path: /actuator/health
+               path: /api/actuator/health
                port: http
           readinessProbe:
              initialDelaySeconds: 60
@@ -74,5 +74,5 @@ spec:
              successThreshold: 1
              failureThreshold: 5
              httpGet:
-                path: /actuator/health
+                path: /api/actuator/health
                 port: http
